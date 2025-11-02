@@ -1,0 +1,16 @@
+Programming languages are classified into three categories:
+1.Low-level language(very close to Hardware)
+2.Mid-level language
+3.High level Language
+
+*Machine language is zeros and ones(01)
+*Assembly instructions differs for each processor
+*High level code------->Compilation----------->low level code
+*Assembler Tool takes assembly code and converts it into machine language
+*C is the most efficient high level language it is very close to the hardware,being close to the hardware improves performance.
+*For critical Applications: Write Assembly code, main code can be (C+Assembly)
+*Best way to use C, is using a text editor+ a compiler and not an ide.
+*The three stages of creating aprogram:
+1.Write a program
+2.Compile the program(Converts High level code into Machine language)
+3.Run the program
