@@ -1,0 +1,94 @@
+*for an efficient code we must use the correct data type for each variable
+*using a wrong data type means an inefficient code, and may lead to fatal mistakes
+
+In C there are 4 Types of Data:
+1)Basic Types:integer types,floating point types(arithmetic types)
+2)enumerated types(arithmetic types, they are used to define variables that can onlyassign a certain,dicrete
+integer values throughout the program).
+3)user defined types(Pointer types,structure types,function types,array types,union types)
+4)void types
+
+*to choose a data type we must ask two questions:
+a) what is the type of data (numeric(+ or -),alphabetic)?
+this is to choose the correct data type(preventing errors)
+b)what is the size of data(min,max)?
+this is to choose the correct size of the datatype(for efficiency and preventing overflows)
+
+*each data type has its size of storage in memory, and each byte in memory has its unique address.
+*in memory values are stored in binary for, only zeros and ones exist in memory.
+*number of values that can be carried by a data type=2^(number of bits)
+*we use unsigned keyword if we are certain that the data will be +ve numbers only
+*we use signed keyword if the data maybe +ve or -ve.
+*it is the best practice to always write signed or unsigned before the data type, because it differs from
+a compiler to the other whether the data type is signed or unsigned by default.
+
+*Size of Data types:
+char : 1 byte                unsigned range:0 to 2^(1*8) -1 , signed range:-2^(1*7) to 2^(1*7) -1
+short: 2 byte
+long : 4 byte
+long long: 8 byte
+
+* the best practice is to have full control be determining signed or unsigned, and setting size by(char,short,long,long long)
+
+sizeof(); the sizeof() operator takes any variable or datatype and returns its size in  bytes
+
+
+Format specifiers: 
+sepecifier              data type               description
+%i or %d :              int                     for signed integers
+%f:                     float or double         
+%c:                     char                    for a single character
+%s:                     char*(string)           a sequence of characters ending with a null character \0
+%u:                     unsigned int 
+%p:                     pointer                 prints a memory address in hexadecimal
+%x:                     int                     hexadecimal base
+%o:                     int                     octal base
+
+Format Modifiers (Width & Precision)
+You can place modifiers between the % and the type character to control the appearance of the output.
+
+A. Precision
+Used after a decimal point (.), it controls the number of decimal places for floating-point numbers or the maximum number of characters for a string.
+ex:
+%.2f	Display a float with two digits after the decimal point.	10.50
+%.5s	Display only the first five characters of a string.	Hello (from "Hello World")
+
+B. Field Width:
+A number placed before the decimal point sets the minimum field width,The output is padded with spaces if the value is shorter than the width
+ex:
+%10d	Display an integer in a field of 10 characters, right-justified.	42
+%-10sDisplay a string in a field of 10 characters, left-justified (using the minus flag).Name      
+
+
+variables definition and declaration:
+syntax: datatype variable_name;
+
+Declaration vs. Definition
+This is a critical distinction in C programming, especially when dealing with global variables and the extern keyword.
+
+1. Variable Declaration
+A declaration simply introduces a variable's name and its type to the compiler. 
+It's a promise that the variable exists somewhere.
+Goal: Inform the compiler about the variable's existence so it can perform type checking.
+Memory: Does not allocate memory (no storage is set aside).
+Keywords: Often uses the extern keyword.
+Examples of Declaration:
+
+extern int total;
+
+void func(int a); (Function declaration/prototype)
+
+2. Variable Definition
+A definition is where a variable is actually created. It tells the compiler to allocate the required amount of memory for that variable.
+Goal: Instruct the compiler to reserve and label a piece of memory.
+Memory: Allocates memory for the variable.
+Keywords: Usually no storage class specifier is needed, but providing an initial value always makes it a definition.
+Examples of Definition:
+int total; (Default initialization to 0 for global variables)
+int count = 5;
+void func(int a) { /* body */ } (Function definition)
+
+the extern keyword:
+The extern keyword is a storage class specifier used to declare a variable or function that is defined in another file (or another part of the current file).
+What it does: It tells the compiler, "The actual memory for this variable has been allocated elsewhere. Don't worry about allocating memory here; just remember its name and type so I can use it.
+"Purpose: It allows you to share global variables between different source files in a multi-file C project without causing multiple definition errors during the linking stage.
