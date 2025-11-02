@@ -1,0 +1,40 @@
+Tokens:
+*A c program consists of various tokens and a token is either a keyword, an identifier, a constant, a string literal or a symbol.
+*the compiler divides each line of code into tokens in a process called tokenization, when the compiler finds that there is a missing bracket or a semicolon it will give you a syntax error.
+example: printf("Hello, World!\n"); consists of 5 Tokens
+1)Printf
+2) (
+3) "Hello, World!\n"
+4) )
+5) ;
+
+*any statement in C,Cpp must end with a semicolon.
+*compiler ignores comments: 1) single line comment //, 2)block comment /**/.
+* it is best practice to always use block comments /**/
+
+Identifiers:
+*A c identifier, is a name used to identify a variable, function, or any other user-defined term
+*identifier naming:
+1)starts with A-Z,a-z or _ 
+2)numbers and letters are available
+3)the only special symbol available is _
+4)C is case sensitive
+int num=5; num is an identifier
+printf("a"); printf is an identifier
+
+Identifier Naming conventions:
+a)Firstletters are Capital.                               StudentName
+b)First letters are capital + underscores.	   Student_Name
+c)First letters are small + underscores.	   student_name
+*always make identifiers descriptive, and it is not recomended to make a long identifier
+
+*How to know which functions are inside a library? open the .h file you will find all the functions prototypes in that library, the compiler knows how to get their definition from the definition file.
+
+Keywords:
+ a group of words that are reserved for the programming language and do a certain function, a user can't use these keywords for any other purpose like identifier names.
+
+Whitespaces in C:
+Whitespaces are ignored in C, but some whitespaces are important.
+*a line containing whitespace is known as a blank line and it is totally ignored by c.
+*int age; there must be at least one line space between int and age, for the copiler to be able to distinguish between them.
+
